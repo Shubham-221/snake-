@@ -1,0 +1,32 @@
+plugins {
+  id 'com.android.application'
+}
+
+android {
+  namespace 'com.example.snake'
+  compileSdk 34
+
+  defaultConfig {
+    applicationId 'com.example.snake'
+    minSdk 23
+    targetSdk 34
+    versionCode 1
+    versionName "1.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  packaging {
+    resources {
+      excludes += ["/META-INF/{AL2.0,LGPL2.1}"]
+    }
+  }
+}
+
+dependencies {
+  // No external deps; using framework android.app.Activity + WebView
+}
